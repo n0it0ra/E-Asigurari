@@ -1,0 +1,33 @@
+@startuml
+class Main {
++ {static} void main(String[])
+}
+class CharFilter {
++ void insertString(DocumentFilter.FilterBypass,int,String,AttributeSet)
++ void replace(DocumentFilter.FilterBypass,int,int,String,AttributeSet)
+}
+class DatePicker {
+~ int month
+~ int year
+~ JLabel l
+~ String day
+~ JDialog d
+~ JButton[] button
++ void displayDate()
++ String setPickedDate()
++ String setPicker()
+}
+class MyIntFilter {
++ void insertString(FilterBypass,int,String,AttributeSet)
+- boolean test(String)
++ void replace(FilterBypass,int,int,String,AttributeSet)
++ void remove(FilterBypass,int,int)
+}
+class MainForm {
++ void initialize()
+}
+
+
+javax.swing.text.DocumentFilter <|-- CharFilter
+javax.swing.text.DocumentFilter <|-- MyIntFilter
+@enduml
